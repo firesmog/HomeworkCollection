@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">作业采集</string>
+    <string name="string_exit">退出</string>
+    <string name="string_user_name">用户名</string>
+
+    <!--hard ware status-->
+    <string name="string_hardware_normal">硬件正常</string>
+    <string name="string_hardware_error">硬件异常</string>
+
+
+
+
+</resources>
