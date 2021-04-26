@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:width="@dimen/dp_25" android:height="@dimen/dp_25">
-        <shape android:shape="oval">
-            <corners android:radius="@dimen/dp_15" />
-            <stroke android:color="@color/color_585858" android:width="@dimen/dp_1"/>
-        </shape>
-    </item>
-</selector>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"
+    android:useLevel="false">
+
+    <solid android:color="@color/color_58d68d" />
+
+    <size
+        android:width="@dimen/dp_15"
+        android:height="@dimen/dp_15" />
+</shape>
+
+
+
