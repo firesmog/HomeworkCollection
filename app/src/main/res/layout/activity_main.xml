@@ -79,7 +79,7 @@
 
 
     <ImageView
-        android:id="@+id/ic_push_homework"
+        android:id="@+id/iv_push_homework"
         android:layout_width="@dimen/dp_399"
         android:layout_height="@dimen/dp_285"
         android:layout_marginTop="@dimen/dp_282"
@@ -92,7 +92,7 @@
         />
 
     <ImageView
-        android:id="@+id/ic_collect_homework"
+        android:id="@+id/iv_collect_homework"
         android:layout_width="@dimen/dp_399"
         android:layout_height="@dimen/dp_285"
         android:layout_marginTop="@dimen/dp_282"
@@ -106,3 +106,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
