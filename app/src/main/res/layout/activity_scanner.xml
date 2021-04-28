@@ -23,12 +23,4 @@
         app:result_color="@color/result_view"
         app:result_point_color="@color/result_point_color" />
 
-
-
-
-
-
-
-
-
 </FrameLayout>

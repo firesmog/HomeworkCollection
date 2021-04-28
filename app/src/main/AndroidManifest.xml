@@ -25,6 +25,8 @@
         </activity>
         <activity android:name="com.readboy.google.zxing.activity.CaptureActivity"
             android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/Theme.HomeworkCollection"/>
     </application>
 
