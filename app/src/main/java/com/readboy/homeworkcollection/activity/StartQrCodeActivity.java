@@ -1,4 +1,4 @@
-package com.readboy.homeworkcollection;
+package com.readboy.homeworkcollection.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.readboy.google.zxing.activity.CaptureActivity;
+import com.readboy.homeworkcollection.util.Constant;
+import com.readboy.homeworkcollection.R;
 
 public class StartQrCodeActivity extends AppCompatActivity implements View.OnClickListener  {
     Button btnQrCode; // 扫码

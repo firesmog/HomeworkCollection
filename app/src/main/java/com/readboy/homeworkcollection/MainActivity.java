@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.readboy.homeworkcollection.activity.PictureActivity;
+import com.readboy.homeworkcollection.activity.StartQrCodeActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btExit;
@@ -23,16 +26,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        findViewById(R.id.iv_collect_homework).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,StartQrCodeActivity.class));
-            }
-        });
     }
 
     private void initView(){
         btExit = (Button)findViewById(R.id.bt_exit);
+        btExit.setText(R.string.string_log);
         ivHead = (ImageView)findViewById(R.id.iv_head);
         ivPush = (ImageView)findViewById(R.id.iv_push_homework);
         ivCollect = (ImageView)findViewById(R.id.iv_collect_homework);
@@ -40,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvUser.setOnClickListener(this);
         ivHead.setOnClickListener(this);
         btExit.setOnClickListener(this);
+        ivCollect.setOnClickListener(this);
+        ivPush.setOnClickListener(this);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -47,11 +47,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bt_exit:
-                finish();
+                startActivity(new Intent(MainActivity.this,StartQrCodeActivity.class));
                 break;
             case R.id.iv_head:
             case R.id.tv_user_name:
-                startActivity(new Intent(MainActivity.this,StartQrCodeActivity.class));
+            case R.id.iv_collect_homework:
+                startActivity(new Intent(MainActivity.this, PictureActivity.class));
                 break;
         }
 

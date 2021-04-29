@@ -7,8 +7,11 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.util.Log;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Bitmap util.
@@ -112,4 +115,39 @@ public class BitmapUtil {
         }
         return bitmap;
     }
+
+
+    public static List<String> getFilesAllName(String path){
+        //传入指定文件夹的路径　　　
+        File file = new File(path);
+        File[] files = file.listFiles();
+        List<String> imagePaths = new ArrayList<>();
+        for(int i = 0; i < files.length; i++){
+            if(checkIsImageFile(files[i].getPath())){
+                imagePaths.add(files[i].getPath());
+            }
+
+        }
+        return imagePaths;
+    }
+
+    /**
+     * 判断是否是照片
+     */
+    public static boolean checkIsImageFile(String fName){
+        boolean isImageFile = false;
+        //获取拓展名
+        String fileEnd = fName.substring(fName.lastIndexOf(".") + 1,
+                fName.length()).toLowerCase();
+        if(fileEnd.equals("jpg") || fileEnd.equals("png") || fileEnd.equals("gif")
+                || fileEnd.equals("jpeg")|| fileEnd.equals("bmp")){
+            isImageFile = true;
+        }else{
+            isImageFile = false;
+        }
+        return isImageFile;
+    }
+
+
+
 }

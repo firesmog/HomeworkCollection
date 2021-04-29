@@ -17,8 +17,6 @@ import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,13 +35,12 @@ import com.readboy.google.zxing.decoding.CaptureActivityHandler;
 import com.readboy.google.zxing.decoding.InactivityTimer;
 import com.readboy.google.zxing.decoding.RGBLuminanceSource;
 import com.readboy.google.zxing.view.ViewfinderView;
-import com.readboy.homeworkcollection.Constant;
+import com.readboy.homeworkcollection.util.Constant;
 import com.readboy.homeworkcollection.R;
 import com.readboy.homeworkcollection.util.BitmapUtil;
 
 import java.io.IOException;
 import java.util.Hashtable;
-import java.util.Objects;
 import java.util.Vector;
 
 
