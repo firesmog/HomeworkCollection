@@ -27,9 +27,6 @@
             android:launchMode="singleTask"/>
         <activity android:name=".activity.PictureActivity"
             android:launchMode="singleTask"/>
-        <activity
-            android:name=".activity.StartQrCodeActivity"
-            android:launchMode="singleTask" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -4,12 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.ContextWrapper;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +18,7 @@ import com.readboy.homeworkcollection.R;
 import com.readboy.homeworkcollection.bean.PicBean;
 import com.readboy.homeworkcollection.bean.PicPathEvent;
 import com.readboy.homeworkcollection.util.BitmapUtil;
-import com.readboy.homeworkcollection.util.Constant;
+import com.readboy.homeworkcollection.bean.Constant;
 
 import org.greenrobot.eventbus.EventBus;
 

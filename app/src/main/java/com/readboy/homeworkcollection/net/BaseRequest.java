@@ -1,6 +1,7 @@
 package com.readboy.homeworkcollection.net;
 
 
+import com.readboy.homeworkcollection.bean.Constant;
 import com.readboy.homeworkcollection.util.log.LogUtils;
 
 import org.jetbrains.annotations.NotNull;
@@ -13,9 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BaseRequest {
 
-    public static final String DOMAIN = "http://diagnose-api.dev.dreamdev.cn/";
-    public static final String PREFIX = "v1/";
-    public static final String API_TOKEN = "CFIsGgvkonYEoVURomNZCk1HwshSQhDw";
+
 
     public BaseRequest() {
     }
@@ -33,7 +32,7 @@ public class BaseRequest {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(logging).build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(DOMAIN + PREFIX)
+                .baseUrl(Constant.DOMAIN)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(client)

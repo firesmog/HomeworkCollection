@@ -35,7 +35,7 @@ import com.readboy.google.zxing.decoding.CaptureActivityHandler;
 import com.readboy.google.zxing.decoding.InactivityTimer;
 import com.readboy.google.zxing.decoding.RGBLuminanceSource;
 import com.readboy.google.zxing.view.ViewfinderView;
-import com.readboy.homeworkcollection.util.Constant;
+import com.readboy.homeworkcollection.bean.Constant;
 import com.readboy.homeworkcollection.R;
 import com.readboy.homeworkcollection.util.BitmapUtil;
 
