@@ -6,6 +6,8 @@ import com.readboy.homeworkcollection.util.log.LogUtils;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.concurrent.TimeUnit;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -28,11 +30,42 @@ public class BaseRequest {
             }
         });
 
+
+
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(10, TimeUnit.SECONDS)
+                .writeTimeout(10, TimeUnit.SECONDS)
+                .addInterceptor(logging).build();
+
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Constant.DOMAIN)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(client)
+                .build();
+        RequestInterface request = retrofit.create(RequestInterface.class);
+
+        return request;
+    }
+
+
+    public static RequestInterface getEBagServer() {
+
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+            @Override
+            public void log(@NotNull String s) {
+                LogUtils.d("request ===> " + s);
+            }
+        });
+
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(logging).build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constant.DOMAIN)
+                .baseUrl(Constant.DOMAIN_EBAG)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(client)

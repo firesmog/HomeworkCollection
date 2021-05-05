@@ -24,5 +24,16 @@ public interface RequestInterface {
     @POST("pad/zuoye/demo")
     Observable<RequestResult> getImgResult(@Part MultipartBody.Part imgs);
 
-  
+
+
+
+    @FormUrlEncoded
+    @POST("v1/auth/login")
+    Observable<EBagRequestResult> loginSystem(
+            @Field("userType") String userType,
+            @Field("userAccount") String userAccount,
+            @Field("password") String password
+            );
+
+
 }

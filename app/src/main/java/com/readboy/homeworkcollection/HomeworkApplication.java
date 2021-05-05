@@ -5,7 +5,16 @@ import android.content.Context;
 
 import com.readboy.homeworkcollection.util.log.LogConfig;
 
+import java.security.SecureRandom;
+import java.security.cert.X509Certificate;
 import java.util.Objects;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 public class HomeworkApplication  extends Application {
     private static Context mContext;
@@ -15,6 +24,7 @@ public class HomeworkApplication  extends Application {
         super.onCreate();
         mContext = getApplicationContext();
         initLog();
+
 
     }
 
@@ -38,4 +48,6 @@ public class HomeworkApplication  extends Application {
                 .setMaxSaveDay(7)
                 .build();
     }
+
+
 }

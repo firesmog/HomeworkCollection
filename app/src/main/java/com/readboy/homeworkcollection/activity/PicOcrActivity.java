@@ -3,6 +3,7 @@ package com.readboy.homeworkcollection.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -39,6 +40,7 @@ import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
+
 public class PicOcrActivity extends AppCompatActivity {
 
     private ImageView ivPush;
@@ -51,6 +53,7 @@ public class PicOcrActivity extends AppCompatActivity {
         EventBus.getDefault().register(this);
         ivPush = (ImageView)findViewById(R.id.iv_pic_push);
         ivScan = (ImageView)findViewById(R.id.iv_scan_test);
+        ivScan.setVisibility(View.VISIBLE);
 
         handleSSLHandshake();
     }
@@ -87,8 +90,10 @@ public class PicOcrActivity extends AppCompatActivity {
 
                     @Override
                     public void onNext(@NonNull RequestResult requestResult) {
-                        LogUtils.d("RequestResult == " + requestResult.toString());
-
+                        LogUtils.d("RequestResult == " + requestResult.toString() + ", img -=" + requestResult.getF_imgs()[0]);
+                        AnimatorUtil.endUpAndDownAnimator();
+                        ivScan.setVisibility(View.GONE);
+                        Glide.with(PicOcrActivity.this).load(requestResult.getF_imgs()[0]).into(ivPush);
                     }
 
                     @Override
@@ -111,7 +116,7 @@ public class PicOcrActivity extends AppCompatActivity {
         EventBus.getDefault().unregister(this);
     }
 
-    public static void handleSSLHandshake() {
+    public  void handleSSLHandshake() {
         try {
             TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
                 public X509Certificate[] getAcceptedIssuers() {
@@ -140,4 +145,5 @@ public class PicOcrActivity extends AppCompatActivity {
         } catch (Exception ignored) {
         }
     }
+
 }

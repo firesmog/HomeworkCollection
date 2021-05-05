@@ -1,13 +1,12 @@
 package com.readboy.homeworkcollection.net;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.io.Serializable;
 
-public class RequestResult implements Serializable {
+public class EBagRequestResult implements Serializable {
     private int F_responseNo;
+    private int F_pwd_reset;
     private String F_responseMsg;
-    private String[] F_imgs;
+    private Object F_data;
 
     public int getF_responseNo() {
         return F_responseNo;
@@ -15,6 +14,14 @@ public class RequestResult implements Serializable {
 
     public void setF_responseNo(int f_responseNo) {
         F_responseNo = f_responseNo;
+    }
+
+    public int getF_pwd_reset() {
+        return F_pwd_reset;
+    }
+
+    public void setF_pwd_reset(int f_pwd_reset) {
+        F_pwd_reset = f_pwd_reset;
     }
 
     public String getF_responseMsg() {
@@ -25,20 +32,21 @@ public class RequestResult implements Serializable {
         F_responseMsg = f_responseMsg;
     }
 
-    public String[] getF_imgs() {
-        return F_imgs;
+    public Object getF_data() {
+        return F_data;
     }
 
-    public void setF_imgs(String[] f_imgs) {
-        F_imgs = f_imgs;
+    public void setF_data(Object f_data) {
+        F_data = f_data;
     }
 
     @Override
     public String toString() {
-        return "RequestResult{" +
+        return "EBagRequestResult{" +
                 "F_responseNo=" + F_responseNo +
+                ", F_pwd_reset=" + F_pwd_reset +
                 ", F_responseMsg='" + F_responseMsg + '\'' +
-                ", F_imgs='" + F_imgs + '\'' +
+                ", F_data=" + F_data +
                 '}';
     }
 }

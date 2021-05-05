@@ -39,8 +39,8 @@ public final class CameraManager {
 
     private static final int MIN_FRAME_WIDTH = 240;
     private static final int MIN_FRAME_HEIGHT = 240;
-    private static final int MAX_FRAME_WIDTH = 480;
-    private static final int MAX_FRAME_HEIGHT = 360;
+    private static final int MAX_FRAME_WIDTH = 400;
+    private static final int MAX_FRAME_HEIGHT = 400;
 
     private static CameraManager cameraManager;
 
@@ -227,8 +227,8 @@ public final class CameraManager {
             }
 
             //修改之后
-            int width = screenResolution.x * 7 / 10;
-            int height = screenResolution.y * 7 / 10;
+            int width = screenResolution.x * 2/ 3;
+            int height = screenResolution.y * 2/ 4;
 
             if (height >= width) { //竖屏
                 height = width;
